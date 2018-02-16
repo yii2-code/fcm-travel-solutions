@@ -17,6 +17,10 @@ class m180216_074055_create_tables extends Migration
 
         $this->execute($sql1);
         $this->execute($sql2);
+
+        $this->createIndex('i-corporate_id', '{{%trip}}', 'corporate_id');
+        $this->createIndex('i-flight_id-depAirportId', '{{%flight_segment}}', ['flight_id', 'depAirportId']);
+
     }
 
     /**
